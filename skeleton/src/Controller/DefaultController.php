@@ -14,6 +14,17 @@ class DefaultController
     {
         return new Response('My message!');
     }
+
+    /**
+     * @Route("/news/{slug}")
+     */
+    public function show($slug)
+    {
+        // return new Response("my message from show");
+        return $this->render('article/show.html.twig', [
+        'title' => ucwords(str_replace('-', ' ', $slug)),
+    ]);
+    }
 }
 
 ?>
