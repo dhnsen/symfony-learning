@@ -10,8 +10,7 @@ html {height:100%}
 /* NAVIGATION */
 
 .navbar-bg {
-    background: url('../images/space-nav.jpg');
-    background-size: 80%;
+    background-color: #666 ;
 }
 
 .dropdown-menu, .dropdown-menu.show {
@@ -46,6 +45,12 @@ html {height:100%}
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
     color: #efefee;
+}
+
+/* body container */
+
+.body-container {
+    margin-left: 5px;
 }
 
 /* ADVERTISEMENT */
