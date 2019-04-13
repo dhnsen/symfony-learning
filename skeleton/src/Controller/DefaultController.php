@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -13,27 +14,19 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        return new Response('My message!');
-    }
-
-    /**
-     * @Route("/news/{slug}")
-     */
-    public function show($slug)
-    {
-        
-        $comments= [
+        $title = "Example Page";
+        $comments = [
             'Comment one',
-            'comment two',
+            'Comment two',
             'Comment three'
         ];
 
        
         return $this->render('article/show.html.twig', [
-        'title' => ucwords(str_replace('-', ' ', $slug)),
+        'title' => ucwords(str_replace('-', ' ', $title)),
         'comments' => $comments,
     ]);
-    
     }
+
 }
 ?>
