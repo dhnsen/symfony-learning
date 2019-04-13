@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController
+class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route()
      */
     public function index()
     {
@@ -20,11 +21,17 @@ class DefaultController
      */
     public function show($slug)
     {
-        // return new Response("my message from show");
+        
+        $comments= [
+            'Comment one',
+            'comment two',
+            'Comment three'
+        ];
+        
         return $this->render('article/show.html.twig', [
-        'title' => ucwords(str_replace('-', ' ', $slug))
+        'title' => ucwords(str_replace('-', ' ', $slug)),
+        'comments' => $comments,
     ]);
     }
 }
-
 ?>
