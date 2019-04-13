@@ -4,14 +4,34 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="show-article-container p-3 mt-4">
+                <div class="row">
+                    <div class="show-article-title-container d-inline-block pl-3 align-middle">
+                            <span class="show-article-title ">{{ title }}</span>
+                    </div>
+                    
+                    
+                </div>
+                <div class="row">
+                <br />
+                    <br />
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                    <h3>Comments ({{ comments|length }})</h3>
 
-<h1>{{ title }}</h1>
-<br />
-<h3>Comments ({{ comments|length }})</h3>
-
-<ul>
-    {% for comment in comments %}
-        <li>{{ comment }}</li>
-    {% endfor %}
-</ul>
+                    <ul>
+                        {% for comment in comments %}
+                            <li>{{ comment }}</li>
+                        {% endfor %}
+                    </ul>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
